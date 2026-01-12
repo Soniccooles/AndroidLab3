@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class NetworkModule {
 
     @Provides
-    fun provideLightService() : BulbApiService =
+    fun provideBulbApiService() : BulbApiService =
         Retrofit.Builder()
             .baseUrl("http://195.133.53.179:1337/")
             .addConverterFactory(GsonConverterFactory.create())

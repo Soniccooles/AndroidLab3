@@ -1,11 +1,11 @@
 package com.itandrew.androidlab3.data
 
-import android.hardware.lights.LightState
-import androidx.lifecycle.LiveData
+import com.itandrew.androidlab3.data.model.BrightnessLevel
 import com.itandrew.androidlab3.data.model.ColorInfo
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface BulbApiService {
 
@@ -22,20 +22,17 @@ interface BulbApiService {
     suspend fun getColors(): Response<List<ColorInfo>>
 
     @POST("color/")
-    suspend fun setColor(): Response<Boolean>
+    suspend fun setColor(@Query("color") color: String): Response<Boolean>
 
     @GET("color/current")
     suspend fun getCurrentColor(): Response<ColorInfo>
 
     @GET("brightness/")
-    suspend fun getBrignessLevels(): Response<List<Int>>
+    suspend fun getBrignessLevels(): Response<BrightnessLevel>
 
     @POST("brightness/")
-    suspend fun setBrightness(): Response<Boolean>
+    suspend fun setBrightness(@Query("level") brightnessLevel: Int): Response<Boolean>
 
     @GET("brightness/current")
     suspend fun getCurrentBrightness(): Response<Int>
-
-
-
 }
