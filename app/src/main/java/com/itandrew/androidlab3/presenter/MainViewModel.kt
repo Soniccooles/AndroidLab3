@@ -1,4 +1,6 @@
 package com.itandrew.androidlab3.presenter
 
-class MainViewModel {
+import androidx.lifecycle.ViewModel
+
+class MainViewModel : ViewModel() {
 }
