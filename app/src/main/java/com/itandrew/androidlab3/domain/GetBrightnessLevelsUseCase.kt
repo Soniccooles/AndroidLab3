@@ -8,7 +8,7 @@ interface GetBrightnessLevelsUseCase {
     suspend operator fun invoke(): Result<BrightnessLevel?>
 }
 
-class GetBrightnessLevelUseCaseImpl @Inject constructor(
+class GetBrightnessLevelsUseCaseImpl @Inject constructor(
     private val repository: BulbRepository
 ) : GetBrightnessLevelsUseCase {
     override suspend fun invoke(): Result<BrightnessLevel?> {

@@ -7,7 +7,7 @@ interface GetLightStateUseCase {
     suspend operator fun invoke(): Result<Boolean?>
 }
 
-class GetLightStateUseCaseImplk @Inject constructor(
+class GetLightStateUseCaseImpl @Inject constructor(
     private val repository: BulbRepository
 ) : GetLightStateUseCase {
     override suspend operator fun invoke(): Result<Boolean?> {
