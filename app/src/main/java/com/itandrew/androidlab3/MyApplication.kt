@@ -1,6 +1,7 @@
 package com.itandrew.androidlab3
 
 import android.app.Application
+import android.content.Context
 import com.itandrew.androidlab3.di.AppComponent
 import com.itandrew.androidlab3.di.DaggerAppComponent
 
@@ -13,4 +14,6 @@ class MyApplication : Application() {
         super.onCreate()
         appComponent = DaggerAppComponent.create()
     }
+
+
 }
