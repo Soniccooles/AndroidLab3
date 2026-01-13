@@ -8,6 +8,7 @@ import com.itandrew.androidlab3.domain.GetColorsUseCase
 import com.itandrew.androidlab3.domain.GetColorsUseCaseImpl
 import com.itandrew.androidlab3.domain.GetCurrentBrightnessUseCase
 import com.itandrew.androidlab3.domain.GetCurrentBrightnessUseCaseImpl
+import com.itandrew.androidlab3.domain.GetCurrentColorUseCaseImpl
 import com.itandrew.androidlab3.domain.GetLightStateUseCase
 import com.itandrew.androidlab3.domain.GetLightStateUseCaseImpl
 import com.itandrew.androidlab3.domain.SetBrightnessUseCase
@@ -44,6 +45,9 @@ interface AppBindsModule {
 
     @Binds
     fun bindSetColorUseCase(useCase: SetColorUseCaseImpl) : SetColorUseCase
+
+    @Binds
+    fun bindGetCurrentColorUseCase(useCase: GetCurrentColorUseCaseImpl): GetColorsUseCase
 
     @Binds
     fun bindTurnLightOffUseCase(useCaseImpl: TurnLightOffUseCaseImpl) : TurnLightOffUseCase
